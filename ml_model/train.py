@@ -20,4 +20,4 @@ model.fit(X, y)
 
 joblib.dump(model, "landslide_model.pkl")
 
-print("SlopeWatch ML model trained successfully!"
+print("SlopeWatch ML model trained successfully!")
