@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SlopeWatch</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #f4f7f9;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px #ccc;
+        }
+
+        input, button {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>🏔️ SlopeWatch</h1>
+    <p>AI-Based Landslide Risk Monitoring System</p>
+
+    <label>Rainfall (mm)</label>
+    <input id="rainfall" type="number" placeholder="Enter rainfall">
+
+    <label>Slope (degrees)</label>
+    <input id="slope" type="number" placeholder="Enter slope">
+
+    <button onclick="checkRisk()">Check Risk</button>
+
+    <div id="result"></div>
+</div>
+
+<script>
+function checkRisk() {
+    const rainfall = Number(document.getElementById("rainfall").value);
+    const slope = Number(document.getElementById("slope").value);
+
+    let risk;
+
+    if (rainfall >= 100 && slope >= 30) {
+        risk = "HIGH";
+    } else if (rainfall >= 50 || slope >= 20) {
+        risk = "MEDIUM";
+    } else {
+        risk = "LOW";
+    }
+
+    document.getElementById("result").innerHTML =
+        "Landslide Risk: <b>" + risk + "</b>";
+}
+</script>
+
+</body>
+</html>
